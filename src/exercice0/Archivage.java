@@ -9,6 +9,7 @@ import Model.Model;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.sql.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,6 +24,8 @@ public class Archivage  {
     private String nomFichier;    
     public static long fichierTaile;
     public static boolean status = false;
+    
+    public static Date date;
 
     public String getNomFichier() {
         return nomFichier;
@@ -59,7 +62,6 @@ public class Archivage  {
                  //Obtenir la taille du fichier
                 fichierTaile = (long) sourceFile.length();
                 System.out.println("La taille du fichier est:"  + fichierTaile);
-                
                 status = (sourceFile.exists()) ? true : false;
                 System.out.println(status);
                 
@@ -138,10 +140,10 @@ public class Archivage  {
 
                   break;
                   case 6: 
-                   System.out.println("Creer le path du dossier");
+                    System.out.println("Creer le path du dossier");
                     System.out.println("Entre le path du dossier de destination");
                     File sourceFile1 = new File(source);
-                      System.out.println(sourceFile1);
+                    System.out.println(sourceFile1);
                     String name1 = sourceFile1.getName();
                     File targetRepo1 = new File(target);
 

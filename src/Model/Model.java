@@ -22,6 +22,7 @@ public class Model {
     private boolean status;
     private String pathSource;
     private String pathArchivage;
+
     
     private boolean success;
 

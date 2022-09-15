@@ -37,6 +37,3 @@ public class Deplacement {
          });
    }
 }
- //https://mkyong.com/java/how-to-copy-file-in-java/
-
-//https://javarevisited.blogspot.com/2012/05/how-to-copy-file-in-java-program.html#axzz7ekzcZUNb

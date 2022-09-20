@@ -10,6 +10,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,8 +27,9 @@ public class Archivage  {
     private String nomFichier;    
     public static long fichierTaile;
     public static boolean status = false;
-    
-    public static Date date;
+    public static LocalDateTime date;
+    private String sourceFile;
+    private String targetRepo;
 
     public String getNomFichier() {
         return nomFichier;
@@ -36,8 +40,6 @@ public class Archivage  {
     }
     
     
-    
-     
     public void deplacer(int choix, int rep, String source, String target, IArchivageListener  archivageListener){
     
     Scanner str = new Scanner(System.in);
@@ -52,21 +54,24 @@ public class Archivage  {
               
              switch (rep){
                case 5:
-                 System.out.println("Entre le path du dossier");
-                   
-                 System.out.println("Entre le path du dossier de destination");
+                System.out.println("Entre le path du dossier");
+             
+                System.out.println("Entre le path du dossier de destination");
                
-                 File sourceFile = new File(source);
-                 System.out.println(sourceFile);
+                File sourceFile = new File(source);
+                System.out.println(sourceFile);
+                date  = LocalDateTime.now();
                  
                  //Obtenir la taille du fichier
                 fichierTaile = (long) sourceFile.length();
+                System.out.println("");
                 System.out.println("La taille du fichier est:"  + fichierTaile);
+                System.out.println("La taille du fichier est:"  + date);
                 status = (sourceFile.exists()) ? true : false;
                 System.out.println(status);
                 
-                String name = sourceFile.getName();
-                File targetRepo = new File(target+name);
+                nomFichier = sourceFile.getName();
+                File targetRepo = new File(target+nomFichier);
                 System.out.println("Copying file : " + sourceFile.getName() +" from Java Program");
                 
                  try {
@@ -76,8 +81,6 @@ public class Archivage  {
                  } catch (IOException ex) {
                      Logger.getLogger(Deplacement.class.getName()).log(Level.SEVERE, null, ex);
                  }
-                
-
                   break;
                   case 6: 
                     System.out.println("Creer le path du dossier");
@@ -107,9 +110,9 @@ public class Archivage  {
                            System.out.println("Le dossier existe déja.");
                }  
             }
+            Model myModel = new Model(nomFichier,   fichierTaile,   fichierTaile, date, status, sourceFile,  targetRepo); 
+            boolean result = myModel.createUser();
                
-             
-             
          }if(choix == 2){
              System.out.println("Coupure avier entrer coupure");
              
@@ -171,9 +174,12 @@ public class Archivage  {
          }
       } 
           
-          
      
      }
 
+            public void gestiondeModel(String nomFichier, int tailleFichier, int tailleFArchive,Date dateHeure, boolean status, String pathSource, String pathArchivage){
+            
+            
+   }
     
 }

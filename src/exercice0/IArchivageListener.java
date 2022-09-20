@@ -11,7 +11,7 @@ package exercice0;
  */
 public interface IArchivageListener {
     
-    void onStart(String fichier);
+     void onStart(String nomFichier);
     
-     void onEnd(String fichier);
+     void onEnd(String nomFichier);
 }

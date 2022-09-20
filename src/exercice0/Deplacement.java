@@ -6,6 +6,8 @@
 package exercice0;
 
 import Model.Model;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 
@@ -13,6 +15,14 @@ import java.util.Scanner;
  *
  * @author user
  */
+
+class Test{
+ 
+    LocalDate myObj = LocalDate.now();
+
+}
+
+
 public class Deplacement {
 
     /**
@@ -20,14 +30,13 @@ public class Deplacement {
      */
     public static void main(String[] args){
         // TODO code application logic here
-
-        
+        LocalDate myObj = LocalDate.now();
         Archivage archivage = new Archivage();
        
          archivage.deplacer(1, 5, "D:/java/jasper.exe", "D:/java2/", new IArchivageListener() {
              @Override
              public void onStart(String fichier){
-    
+              
              }
 
              @Override
@@ -35,5 +44,7 @@ public class Deplacement {
                  
              }
          });
+         
+        
    }
 }

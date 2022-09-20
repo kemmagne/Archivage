@@ -42,7 +42,7 @@ public class Model {
     
       try{
           Connection con = null;
-          String sql = "INSERT INTO operation (nomFichier, tailleFichier, tailleFArchive, dateHeure, status, pathSource, pathArchivage) VALUES (?, ?, ?, ?, ?, ?, ?)";
+          String sql = "INSERT INTO journal_archivage (nomFichier, tailleFichier, tailleFArchive, dateHeure, status, pathSource, pathArchivage) VALUES (?, ?, ?, ?, ?, ?, ?)";
           con = DriverManager.getConnection("jdbc:postgresql://localhost/journal_archivage", "postgres", "megatim");
           PreparedStatement ps = con.prepareStatement(sql);
           con.setAutoCommit(false);
@@ -50,7 +50,7 @@ public class Model {
           ps.setString(1, this.nomFichier);
           ps.setDouble(2, this.tailleFichier);
           ps.setDouble(3, this.tailleFArchive);
-          ps.setDate(4, null);
+          ps.setDate(4, this.dateHeure);
           ps.setBoolean(5, this.status);
           ps.setString(6, this.pathSource);
           ps.setString(7, this.pathArchivage);

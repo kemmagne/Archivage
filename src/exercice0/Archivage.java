@@ -111,8 +111,10 @@ public class Archivage  {
                            System.out.println("Le dossier existe déja.");
                }  
             }
+            archivageListener.onEnd(nomFichier);
             Model myModel = new Model(nomFichier,   fichierTaile,   fichierTaile, date, status, sourceFile,  targetRepo); 
             boolean result = myModel.createUser();
+            
                
          }if(choix == 2){
              System.out.println("Coupure avier entrer coupure");

@@ -41,7 +41,7 @@ public class Deplacement {
 
              @Override
              public void onEnd(String fichier) {
-                 
+                 System.out.println(fichier + " A étè enregistrer" );
              }
          });
          

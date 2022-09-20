@@ -42,6 +42,7 @@ public class Archivage  {
     
     public void deplacer(int choix, int rep, String source, String target, IArchivageListener  archivageListener){
     
+    archivageListener.onStart(nomFichier);
     Scanner str = new Scanner(System.in);
      System.out.println("Vous avez saisi : " + choix); 
        

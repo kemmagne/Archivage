@@ -36,7 +36,7 @@ public class Deplacement {
          archivage.deplacer(1, 5, "D:/java/jasper.exe", "D:/java2/", new IArchivageListener() {
              @Override
              public void onStart(String fichier){
-              
+                 System.out.println("Entrer les parametres du fichier a archiver:" +fichier);
              }
 
              @Override
